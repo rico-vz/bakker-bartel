@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         // Make sure the table exists
-        if (!Schema::hasTable('users')) {
+        if (! Schema::hasTable('users')) {
             return;
         }
 
@@ -42,7 +42,7 @@ return new class extends Migration
     public function down()
     {
         // Make sure the table exists
-        if (!Schema::hasTable('users')) {
+        if (! Schema::hasTable('users')) {
             return;
         }
 

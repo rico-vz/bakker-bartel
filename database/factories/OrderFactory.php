@@ -41,7 +41,7 @@ class OrderFactory extends Factory
                 'Carrot cake',
                 'Apple pie',
                 'Pecan pie',
-                'Lemon meringue pie'
+                'Lemon meringue pie',
             ]),
             'price' => $this->faker->randomNumber(3),
             'date' => $this->faker->date(),

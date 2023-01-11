@@ -17,6 +17,6 @@ class Order extends Model
         'order',
         'price',
         'date',
-        'status'
+        'status',
     ];
 }
