@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Function_db extends Model
 {
     use HasFactory;
+
     protected $table = 'functions';
 
     protected $fillable = [

@@ -26,7 +26,6 @@ class EmployeeFactory extends Factory
             'employee_since' => fake()->date,
             'function_id' => fake()->numberBetween(1, 10),
 
-
         ];
     }
 }

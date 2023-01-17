@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class VacationRequest extends Model
 {
     use HasFactory;
+
     protected $table = 'vacationrequests';
 
     protected $fillable = [
