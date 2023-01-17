@@ -9,7 +9,6 @@ class Product extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
         'product_name',
         'made_at',
