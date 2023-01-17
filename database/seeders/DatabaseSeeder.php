@@ -3,10 +3,17 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use Illuminate\Database\Seeder;
 use App\Models\Employee;
 use App\Models\Function_db;
 use App\Models\User;
-use Illuminate\Database\Seeder;
+use App\Models\VacationRequest;
+use App\Models\Order;
+use App\Models\Assortment;
+use App\Models\Product;
+use App\Models\Stock;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,5 +37,10 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'), // password
         ]);
         User::factory(10)->create();
+        VacationRequest::factory(10)->create();
+        Order::factory(10)->create();
+        Assortment::factory(10)->create();
+        Product::factory(10)->create();
+        Stock::factory(10)->create();
     }
 }
