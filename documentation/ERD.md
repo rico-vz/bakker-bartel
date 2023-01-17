@@ -1,7 +1,7 @@
 # DB bakker-bartel
 
 ## Table: `users`
-| Column | Type | extra |
+| Column | Type | addition |
 | --- | --- | --- |
 | `employee_id` | `int(11)` | foreign key naar employees |
 | `username` | `varchar(255)` |
@@ -12,7 +12,7 @@
 
 
 ## Table: `employees`
-| Column | Type | extra |
+| Column | Type | addition |
 | --- | --- | --- |
 | `employee_id` | `int(11)` | foreign key naar employees |
 | `function_id` | `int(11)` | foreign key naar functions |
@@ -26,7 +26,7 @@
 | `updated_at` | `timestamp` |
 
 ## Table: `vacation_requests`
-| Column | Type | extra |
+| Column | Type | addition |
 | --- | --- | --- |
 | `id` | `int(11)` | primary key |
 | `created_at` | `timestamp` |
@@ -37,7 +37,7 @@
 | `status` | ENUM('in behandeling', 'goedgekeurd', 'afgekeurd') |
 
 ## Table: `functions`
-| Column | Type | extra |
+| Column | Type | addition |
 | --- | --- | --- |
 | `employee_id` | `int(11)` | primary key |
 | `function_id` | `int(11)` | foreign key naar employees |
@@ -45,7 +45,7 @@
 | `salary` | `int(11)` |
 
 ## Table: `orders`
-| Column | Type | extra |
+| Column | Type | addition |
 | --- | --- | --- |
 | `order_id` | `int(11)` | primary key |
 | `created_at` | `timestamp` |
@@ -57,7 +57,7 @@
 | `status` | `ENUM('in behandeling', 'klaar om op te halen', 'afgehandeld', 'geannuleerd')` |
 
 ## Table: `assortment`
-| Column | Type | extra |
+| Column | Type | addition |
 | --- | --- | --- |
 | `id` | `int(11)` | primary key |
 | `category` | `varchar(255)` |
@@ -67,7 +67,7 @@
 | `image` | `varchar(255)` |
 
 ## Table: `products`
-| Column | Type | extra |
+| Column | Type | addition |
 | --- | --- | --- |
 | `product_id` | `int(11)` | primary key |
 | `product_name` | `varchar(255)` | foreign key naar assortment |
@@ -75,7 +75,7 @@
 | `status` | ENUM('in voorraad', 'uit voorraad') |
 
 ## Table: `stock`
-| Column | Type | extra |
+| Column | Type | addition |
 | --- | --- | --- |
 | `id` | `int(11)` | primary key |
 | `ingredient` | `varchar(255)` |
