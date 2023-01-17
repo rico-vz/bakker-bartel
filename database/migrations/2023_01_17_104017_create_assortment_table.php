@@ -11,19 +11,18 @@ return new class extends Migration
      *
      * @return void
      */
+
+
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('assortment', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('order_id');
-            $table->string('full_name');
-            $table->string('email');
-            $table->integer('phone_number');
-            $table->longText('order');
+            $table->string('category'); // Perhaps turn this into an enum? - Rico
+            $table->string('product_name');
             $table->integer('price');
-            $table->date('date');
-            $table->enum('status', ['in behandeling', 'verwerking', 'voltooid', 'geannuleerd'])->default('in behandeling');
+            $table->string('description');
+            $table->string('image');
         });
     }
 
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('assortment');
     }
 };
