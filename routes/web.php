@@ -19,7 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/vacation', [VacationController::class, 'index']);
+Route::get('/datepicker', function () {
+    return view('datepicker');
+});
+
+Route::get('/vacation', function () {
+    return view('/vacation/vacationForm');
+})->middleware(['auth', 'verified'])->name('vacationForm');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
