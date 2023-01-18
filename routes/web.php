@@ -29,6 +29,7 @@ Route::get('/about', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/bestellingen', [DashboardController::class, 'bestellingen'])->middleware(['auth', 'verified'])->name('bestellingen');
+Route::get('/assortiment', [DashboardController::class, 'assortiment'])->middleware(['auth', 'verified'])->name('assortiment');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Assortment;
 
 class DashboardController extends Controller
 {
- 
+
 
     public function index()
     {
@@ -24,5 +25,13 @@ class DashboardController extends Controller
             'orders' => Order::all(),
         ];
         return view('dash.orders', $data);
+    }
+
+    public function assortiment()
+    {
+        $data = [
+            'assortment' => Assortment::all(),
+        ];
+        return view('dash.assortment', $data);
     }
 }
