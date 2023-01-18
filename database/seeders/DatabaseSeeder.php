@@ -23,9 +23,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-
-
         // The seeders are called in the order they are listed here.
         // This is necessary because of the foreign keys.
         // Changing the order will result in an error.

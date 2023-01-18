@@ -17,6 +17,7 @@ class AssortmentFactory extends Factory
     public function definition()
     {
         $p_name = $this->faker->word;
+
         return [
             'category' => $this->faker->word,
             'product_name' => $p_name,
