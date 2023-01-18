@@ -23,10 +23,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
 
+
+
+        // The seeders are called in the order they are listed here.
+        // This is necessary because of the foreign keys.
+        // Changing the order will result in an error.
         Function_db::factory(10)->create();
-
         Employee::factory(10)->create();
         User::factory()->create([
             'employee_id' => '1',
