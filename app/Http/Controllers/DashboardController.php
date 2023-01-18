@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Product;
-use App\Models\Order;
 use App\Models\Assortment;
+use App\Models\Order;
+use App\Models\Product;
 
 class DashboardController extends Controller
 {
-
-
     public function index()
     {
         $data = [
             'products' => Product::all(),
         ];
+
         return view('dashboard', $data);
     }
 
@@ -24,6 +22,7 @@ class DashboardController extends Controller
         $data = [
             'orders' => Order::all(),
         ];
+
         return view('dash.orders', $data);
     }
 
@@ -32,6 +31,7 @@ class DashboardController extends Controller
         $data = [
             'assortment' => Assortment::all(),
         ];
+
         return view('dash.assortment', $data);
     }
 }
