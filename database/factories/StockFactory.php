@@ -18,7 +18,7 @@ class StockFactory extends Factory
     {
         return [
             'ingredient' => fake()->word,
-            'amount' => fake()->randomDigitNotNull,
+            'amount' => fake()->randomDigitNotNull * 4,
             'last_ordered' => fake()->date,
         ];
     }

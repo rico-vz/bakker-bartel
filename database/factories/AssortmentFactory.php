@@ -19,7 +19,7 @@ class AssortmentFactory extends Factory
         return [
             'category' => $this->faker->word,
             'product_name' => $this->faker->word,
-            'price' => $this->faker->randomDigitNotNull,
+            'price' => $this->faker->randomDigitNotNull * 10,
             'description' => $this->faker->word,
             'image' => 'https://cataas.com/cat?width=500&height=300',
         ];
