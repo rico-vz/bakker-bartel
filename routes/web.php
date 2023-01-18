@@ -23,6 +23,10 @@ Route::get('/', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/bestellingen', [DashboardController::class, 'bestellingen'])->middleware(['auth', 'verified'])->name('bestellingen');
 
