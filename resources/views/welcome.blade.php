@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Baker Bartel</title>
+    <title>Bakker Bartel</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
