@@ -1,8 +1,9 @@
 <x-guest-layout>
-    @if (!Auth::check())
-        <script>
-            window.location = "/login";
-        </script>
+    <!-- function moet manager gaan heten -->
+    @if (Auth::user()->employee->function->manager)
+    <script>
+    window.location = "/login";
+    </script>
     @endif
 
     <form method="POST" action="{{ route('register') }}">
