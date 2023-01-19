@@ -36,10 +36,10 @@
                             @endforeach
                         </tbody>
                     </table>
-
-
+                    <div class="mt-5">
+                        {{ $orders->links() }}
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>

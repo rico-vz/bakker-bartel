@@ -19,6 +19,6 @@ class Function_db extends Model
 
     public function employee()
     {
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(Employee::class, 'function_id', 'id');
     }
 }
