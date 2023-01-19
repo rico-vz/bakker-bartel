@@ -42,7 +42,19 @@ php artisan migrate:fresh
 php artisan db:seed
 ```
 
-<p>6. Serve the website</p>
+<p>6. Install the required node packages</p>
+
+```
+npm i
+```
+
+<p>7. Run vite for Tailwind</p>
+
+```
+npm run dev
+```
+
+<p>8. Serve the website</p>
 
 ```
 php artisan serve
