@@ -3,7 +3,8 @@
 ## Table: `users`
 | Column | Type | addition |
 | --- | --- | --- |
-| `employee_id` | `int(11)` | foreign key naar employees |
+| `id` | `int(11)` | primary key |
+| `employee_id` | `int(11)` | foreign key naar 'employees' + 'functions' + 'vacation_requests' |
 | `username` | `varchar(255)` |
 | `password` | `varchar(255)` |
 | `email` | `varchar(255)` |
@@ -14,8 +15,8 @@
 ## Table: `employees`
 | Column | Type | addition |
 | --- | --- | --- |
-| `employee_id` | `int(11)` | foreign key naar employees |
-| `function_id` | `int(11)` | foreign key naar functions |
+| `id` | `int(11)` | primary key, foreign key naar 'users' + 'functions' + 'vacation_requests' |
+| `function_id` | `int(11)` | foreign key naar 'functions' |
 | `first_name` | `varchar(255)` |
 | `last_name` | `varchar(255)` |
 | `date_of_birth` | `date` |
@@ -25,29 +26,29 @@
 | `employee_since` | `date` |
 | `updated_at` | `timestamp` |
 
+## Table: `functions`
+| Column | Type | addition |
+| --- | --- | --- |
+| `id` | `int(11)` | primary key, foreign key naar 'employees' |
+| `employee_id` | `int(11)` | foreign key naar 'employees' + 'users' + 'vacation_requests' |
+| `name` | `varchar(255)` |
+| `salary` | `int(11)` |
+
 ## Table: `vacation_requests`
 | Column | Type | addition |
 | --- | --- | --- |
 | `id` | `int(11)` | primary key |
 | `created_at` | `timestamp` |
-| `employee_id` | `int(11)` | foreign key naar employees |
+| `employee_id` | `int(11)` | foreign key naar 'employees' + 'functions' + 'users' |
 | `start_date` | `date` |
 | `end_date` | `date` |
 | `reason` | `varchar(255)` |
-| `status` | ENUM('in behandeling', 'goedgekeurd', 'afgekeurd') |
-
-## Table: `functions`
-| Column | Type | addition |
-| --- | --- | --- |
-| `employee_id` | `int(11)` | primary key |
-| `function_id` | `int(11)` | foreign key naar employees |
-| `name` | `varchar(255)` |
-| `salary` | `int(11)` |
+| `status` | `ENUM('in behandeling', 'goedgekeurd', 'afgekeurd')` |
 
 ## Table: `orders`
 | Column | Type | addition |
 | --- | --- | --- |
-| `order_id` | `int(11)` | primary key |
+| `id` | `int(11)` | primary key |
 | `created_at` | `timestamp` |
 | `name` | `varchar(255)` |
 | `email` | `varchar(255)` |
@@ -61,7 +62,7 @@
 | --- | --- | --- |
 | `id` | `int(11)` | primary key |
 | `category` | `varchar(255)` |
-| `product_name` | `varchar(255)` | foreign key naar products |
+| `product_name` | `varchar(255)` | foreign key naar 'products' |
 | `price` | `int(11)` |
 | `description` | `varchar(255)` |
 | `image` | `varchar(255)` |
@@ -69,10 +70,10 @@
 ## Table: `products`
 | Column | Type | addition |
 | --- | --- | --- |
-| `product_id` | `int(11)` | primary key |
-| `product_name` | `varchar(255)` | foreign key naar assortment |
+| `id` | `int(11)` | primary key |
+| `product_name` | `varchar(255)` | foreign key naar 'assortment' |
 | `made_at` | `date` |
-| `status` | ENUM('in voorraad', 'uit voorraad') |
+| `status` | `ENUM('in voorraad', 'uit voorraad')` |
 
 ## Table: `stock`
 | Column | Type | addition |

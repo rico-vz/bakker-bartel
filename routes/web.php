@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VacationController;
 use Illuminate\Support\Facades\Route;
@@ -19,17 +20,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/datepicker', function () {
-    return view('datepicker');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/about', function () {
+    return view('about');
 });
 
-Route::get('/vacation', function () {
-    return view('/vacation/vacationForm');
-})->middleware(['auth', 'verified'])->name('vacationForm');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/bestellingen', [DashboardController::class, 'bestellingen'])->middleware(['auth', 'verified'])->name('bestellingen');
+Route::get('/assortiment', [DashboardController::class, 'assortiment'])->middleware(['auth', 'verified'])->name('assortiment');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

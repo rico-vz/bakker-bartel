@@ -18,7 +18,7 @@ class Function_dbFactory extends Factory
     {
         return [
             'name' => fake()->word,
-            'salary' => fake()->randomDigitNotNull,
+            'salary' => fake()->randomDigitNotNull * 110,
 
         ];
     }
