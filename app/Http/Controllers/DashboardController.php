@@ -10,17 +10,13 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $data = [
-            'products' => Product::all(),
-        ];
-
-        return view('dashboard', $data);
+        return view('dashboard');
     }
 
     public function bestellingen()
     {
         $data = [
-            'orders' => Order::all(),
+            'orders' => Order::paginate(10),
         ];
 
         return view('dash.orders', $data);
@@ -29,7 +25,7 @@ class DashboardController extends Controller
     public function assortiment()
     {
         $data = [
-            'assortment' => Assortment::all(),
+            'assortment' => Assortment::paginate(5),
         ];
 
         return view('dash.assortment', $data);
