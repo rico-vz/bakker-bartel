@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Assortment;
 use App\Models\Order;
-use App\Models\Product;
 
 class DashboardController extends Controller
 {
