@@ -36,7 +36,7 @@ composer install
 php artisan migrate:fresh
 ```
 
-<p>5. Seed the database with fake data (optional)</p>
+<p>5. Seed the database with data (optional)</p>
 
 ```
 php artisan db:seed
