@@ -15,7 +15,6 @@ use App\Models\VacationRequest;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -27,7 +26,42 @@ class DatabaseSeeder extends Seeder
 
     public function run()
     {
-
+        $function_data = [
+            [
+                'name' => 'Manager',
+                'salary' => '60000',
+            ],
+            [
+                'name' => 'Hoofd bakker',
+                'salary' => '50000',
+            ],
+            [
+                'name' => 'Bakker',
+                'salary' => '35000',
+            ],
+            [
+                'name' => 'Verkoper',
+                'salary' => '25000',
+            ],
+            [
+                'name' => 'Schoonmaker',
+                'salary' => '15000',
+            ]
+        ];
+        
+        $employee_data = [
+            [
+                'function_id' => '1',
+                'first_name' => 'Bart',
+                'last_name' => 'Bartel',
+                'date_of_birth' => '1970-02-02',
+                'email' => 'bartb@bakkerijbartel.nl',
+                'phone' => '0611117835',
+                
+                
+                
+                
+        
         $assortment_data = [
             [
                 'id' => '1',
@@ -238,23 +272,26 @@ class DatabaseSeeder extends Seeder
         stuks.',
                 'image' => 'https://coop.no/globalassets/coop-marked/bakelykke/skoleboller/skoleboller-hoved.jpg'
             ]
-        ];
+                ];
 
         // The seeders are called in the order they are listed here.
         // This is necessary because of the foreign keys.
         // Changing the order will result in an error.
-        Function_db::factory(10)->create();
-        Employee::factory(10)->create();
-        User::factory()->create([
-            'employee_id' => '1',
-            'name' => 'TestAdmin',
-            'email' => 'test@admin.com',
-            'password' => bcrypt('password'), // password
-        ]);
+                Employee::factory(10)->create();
+                User::factory()->create([
+                'employee_id' => '1',
+                'name' => 'TestAdmin',
+                'email' => 'test@admin.com',
+                'password' => bcrypt('password'), // password
+                ]);
         User::factory(10)->create();
         VacationRequest::factory(10)->create();
         Order::factory(10)->create();
 
+        foreach ($function_data as $function) {
+            Function_db::create($function);
+        }
+        
         foreach ($assortment_data as $assort) {
             Assortment::create($assort);
         }
