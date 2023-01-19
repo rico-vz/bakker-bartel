@@ -10,4 +10,9 @@ class VacationController extends Controller
     {
         return view('vacation.index');
     }
+
+    public function form()
+    {
+        return view('vacation.form');
+    }
 }

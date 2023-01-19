@@ -38,4 +38,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/vacation', [VacationController::class, 'index'])->name('vacation.index');
+Route::get('/vacationForm', [VacationController::class, 'form'])->name('vacationForm');
+Route::post('/vacation', [VacationController::class, 'store'])->name('vacation.store');
+
+Route::get('/datepicker', function () {
+    return view('datepicker');
+});
+
 require __DIR__.'/auth.php';
