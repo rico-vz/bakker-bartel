@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('category'); // Perhaps turn this into an enum? - Rico
             $table->string('product_name');
-            $table->integer('price');
+            $table->decimal('price');
             $table->string('description');
             $table->string('image');
         });
