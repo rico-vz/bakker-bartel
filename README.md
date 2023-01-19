@@ -36,13 +36,25 @@ composer install
 php artisan migrate:fresh
 ```
 
-<p>5. Seed the database with fake data (optional)</p>
+<p>5. Seed the database with data (optional)</p>
 
 ```
 php artisan db:seed
 ```
 
-<p>6. Serve the website</p>
+<p>6. Install the required node packages</p>
+
+```
+npm i
+```
+
+<p>7. Run vite for Tailwind</p>
+
+```
+npm run dev
+```
+
+<p>8. Serve the website</p>
 
 ```
 php artisan serve

@@ -20,7 +20,7 @@ class OrderFactory extends Factory
             'name' => fake()->name,
             'email' => fake()->unique()->safeEmail,
             'phone' => fake()->phoneNumber,
-            'total_price' => fake()->randomDigitNotNull,
+            'total_price' => fake()->randomDigitNotNull * 15,
             'pickup_date' => fake()->date,
             'status' => fake()->randomElement(['in behandeling', 'klaar om op te halen', 'afgehandeld', 'geannuleerd']),
         ];

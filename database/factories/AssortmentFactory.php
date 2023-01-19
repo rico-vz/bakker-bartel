@@ -16,12 +16,14 @@ class AssortmentFactory extends Factory
      */
     public function definition()
     {
+        $p_name = $this->faker->word;
+
         return [
             'category' => $this->faker->word,
-            'product_name' => $this->faker->word,
-            'price' => $this->faker->randomDigitNotNull,
+            'product_name' => $p_name,
+            'price' => $this->faker->randomDigitNotNull * 10,
             'description' => $this->faker->word,
-            'image' => 'https://cataas.com/cat?width=500&height=300',
+            'image' => "https://via.placeholder.com/400x250.png?text=$p_name",
         ];
     }
 }
