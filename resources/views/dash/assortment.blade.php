@@ -26,8 +26,8 @@
                                     <td class="px-4 py-2 border-t">{{ $asso->id }}</td>
                                     <td class="px-4 py-2 border-t">{{ $asso->category }}</td>
                                     <td class="px-4 py-2 border-t">{{ $asso->product_name }}</td>
-                                    <td class="px-4 py-2 border-t">{{ $asso->price }}</td>
                                     <td class="px-4 py-2 border-t">{{ $asso->description }}</td>
+                                    <td class="px-4 py-2 border-t">{{ $asso->price }}</td>
                                     <td class="px-4 py-2 border-t">
                                         <img src="{{ $asso->image }}"
                                             class="object-cover h-32 transition-all scale-75 rounded-md hover:shadow-md hover:scale-90">
