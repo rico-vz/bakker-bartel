@@ -57,9 +57,10 @@ class DatabaseSeeder extends Seeder
                 'date_of_birth' => '1970-02-02',
                 'email' => 'bartb@bakkerijbartel.nl',
                 'phone' => '0611117835',
-                
-                
-                
+                'address' => 'Spinnekop 2-3, 1443GN Purmerend',
+                'employee_since' => '1988-03-02'
+            ]
+        ];               
                 
         
         $assortment_data = [
@@ -277,7 +278,15 @@ class DatabaseSeeder extends Seeder
         // The seeders are called in the order they are listed here.
         // This is necessary because of the foreign keys.
         // Changing the order will result in an error.
-                Employee::factory(10)->create();
+        foreach ($function_data as $function) {
+            Function_db::create($function);
+        }
+        
+        foreach ($employee_data as $employee) {
+            Employee::create($employee);
+        }
+        Employee::factory(10)->create();
+        
                 User::factory()->create([
                 'employee_id' => '1',
                 'name' => 'TestAdmin',
@@ -287,10 +296,6 @@ class DatabaseSeeder extends Seeder
         User::factory(10)->create();
         VacationRequest::factory(10)->create();
         Order::factory(10)->create();
-
-        foreach ($function_data as $function) {
-            Function_db::create($function);
-        }
         
         foreach ($assortment_data as $assort) {
             Assortment::create($assort);
