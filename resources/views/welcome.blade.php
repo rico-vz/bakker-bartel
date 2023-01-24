@@ -13,7 +13,8 @@
                 <a href="/" class="text-lg font-medium">Bakker Bartel</a>
                 <div class="ml-4">
                     <a href="/about" class="ml-4 text-sm font-medium">About</a>
-                    <a href="/aanvraag" class="ml-4 text-sm font-medium">aanvraag</a>
+                    <a href="/aanvraag" class="ml-4 text-sm font-medium">Aanvraag</a>
+                    <a href="/assortiment" class="ml-4 text-sm font-medium">Assortiment</a>
                 </div>
             </div>
         </div>
