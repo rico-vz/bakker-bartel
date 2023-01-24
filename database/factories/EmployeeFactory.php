@@ -24,8 +24,7 @@ class EmployeeFactory extends Factory
             'phone' => fake()->phoneNumber,
             'address' => fake()->address,
             'employee_since' => fake()->date,
-            'function_id' => fake()->numberBetween(1, 10),
-
+            'function_id' => fake()->numberBetween(2, 5),
         ];
     }
 }
