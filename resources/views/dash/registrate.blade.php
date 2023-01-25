@@ -11,6 +11,8 @@
         </div>
     </div>
 @else
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+
     <x-app-layout>
         <x-slot name="header">
             <h2 class="text-xl font-semibold leading-tight text-gray-800">

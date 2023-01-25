@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Assortment;
-use App\Models\Order;
 use App\Models\Employee;
+use App\Models\Order;
 
 class DashboardController extends Controller
 {
@@ -36,6 +36,7 @@ class DashboardController extends Controller
         $data = [
             'employees' => Employee::paginate(5),
         ];
+
         return view('dash.employees', $data);
     }
 }
