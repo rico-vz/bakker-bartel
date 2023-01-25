@@ -12,10 +12,8 @@
                     <table class="overflow-hidden rounded-lg shadow-md">
                         <thead class="bg-gray-300">
                             <tr class="text-gray-700">
-                                <th class="px-4 py-2">ID</th>
                                 <th class="px-4 py-2">Functie</th>
-                                <th class="px-4 py-2">Voornaam</th>
-                                <th class="px-4 py-2">Achternaam</th>
+                                <th class="px-4 py-2">Naam</th>
                                 <th class="px-4 py-2">Geboorte Datum</th>
                                 <th class="px-4 py-2">Email</th>
                                 <th class="px-4 py-2">Telefoonnummer</th>
@@ -28,10 +26,8 @@
                         <tbody>
                             @foreach ($employees as $employee)
                                 <tr class="text-gray-700">
-                                    <td class="px-4 py-2 border-t">{{ $employee->id }}</td>
-                                    <td class="px-4 py-2 border-t">{{ $employee->function_id }}</td>
-                                    <td class="px-4 py-2 border-t">{{ $employee->first_name }}</td>
-                                    <td class="px-4 py-2 border-t">{{ $employee->last_name }}</td>
+                                    <td class="px-4 py-2 border-t">{{ $employee->function->name }}</td>
+                                    <td class="px-4 py-2 border-t">{{ $employee->first_name }} {{ $employee->last_name }}</td>
                                     <td class="px-4 py-2 border-t">{{ $employee->date_of_birth }}</td>
                                     <td class="px-4 py-2 border-t">{{ $employee->email }}</td>
                                     <td class="px-4 py-2 border-t">{{ $employee->phone }}</td>
