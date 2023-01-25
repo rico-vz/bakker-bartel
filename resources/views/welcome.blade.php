@@ -17,6 +17,9 @@
                     <a href="/assortiment" class="ml-4 text-sm font-medium">Assortiment</a>
                 </div>
             </div>
+            <div class="flex justify-end">
+                <a href="/login" class="border-2 border-solid border-gray-500 rounded-md bg-gray-300 px-1 py-0.5 text-sm font-medium">Log in</a>
+            </div>
         </div>
     </nav>
 
