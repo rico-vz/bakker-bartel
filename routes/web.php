@@ -30,6 +30,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 Route::get('/bestellingen', [DashboardController::class, 'bestellingen'])->middleware(['auth', 'verified'])->name('bestellingen');
 Route::get('/assortiment', [DashboardController::class, 'assortiment'])->middleware(['auth', 'verified'])->name('assortiment');
 Route::get(('/medewerkers'), [DashboardController::class, 'medewerkers'])->middleware(['auth', 'verified'])->name('medewerkers');
+Route::get('/dash/register', function () {
+    return view('dash.registrate');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
