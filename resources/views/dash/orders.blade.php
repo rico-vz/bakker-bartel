@@ -19,6 +19,7 @@
                                 <th class="px-4 py-2">Prijs</th>
                                 <th class="px-4 py-2">Ophaal Datum</th>
                                 <th class="px-4 py-2">Status</th>
+                                <th class="px-4 py-2">Acties</th>
 
                             </tr>
                         </thead>
@@ -32,6 +33,29 @@
                                     <td class="px-4 py-2 border-t">{{ $order->total_price }}</td>
                                     <td class="px-4 py-2 border-t">{{ $order->pickup_date }}</td>
                                     <td class="px-4 py-2 border-t">{{ $order->status }}</td>
+                                    <td class="px-4 py-2 border-t">
+                                        <form action="{{ route('orders.update', $order->id) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <select name="status" id="status" class="block w-full mt-1"
+                                                onchange="this.form.submit()">
+                                                <option value="in behandeling"
+                                                    {{ $order->status == 'in behandeling' ? 'selected' : '' }}>In
+                                                    behandeling</option>
+                                                <option value="afgehandeld"
+                                                    {{ $order->status == 'afgehandeld' ? 'selected' : '' }}>Afgehandeld
+                                                </option>
+                                                <option value="klaar om op te halen"
+                                                    {{ $order->status == 'klaar om op te halen' ? 'selected' : '' }}>
+                                                    Klaar om op te halen
+                                                </option>
+                                                <option value="geannuleerd"
+                                                    {{ $order->status == 'geannuleerd' ? 'selected' : '' }}>Geannuleerd
+                                                </option>
+                                            </select>
+                                        </form>
+                                    </td>
+
                                 </tr>
                             @endforeach
                         </tbody>
