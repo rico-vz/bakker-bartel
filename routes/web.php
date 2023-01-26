@@ -34,10 +34,12 @@ Route::get('/dash/register', function () {
     return view('dash.registrate');
 });
 
+Route::put('/orders/update/{id}', [DashboardController::class, 'update_orders'])->name('orders.update');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

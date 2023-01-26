@@ -16,7 +16,8 @@ class DashboardController extends Controller
     public function bestellingen()
     {
         $data = [
-            'orders' => Order::paginate(10),
+            // Retrieve all orders and sort them by status ('klaar om op te halen', 'afgehandeld', 'geannuleerd') first and then by pickup_date. Paginate with a limit of 5 orders per page to prevent the page from getting too long.
+            'orders' => Order::orderByRaw('FIELD(status, "klaar om op te halen", "afgehandeld", "geannuleerd"), pickup_date')->paginate(5),
         ];
 
         return view('dash.orders', $data);
@@ -38,5 +39,14 @@ class DashboardController extends Controller
         ];
 
         return view('dash.employees', $data);
+    }
+
+    public function update_orders($id)
+    {
+        $order = Order::find($id);
+        $order->status = request('status');
+        $order->save();
+
+        return redirect()->route('bestellingen');
     }
 }
