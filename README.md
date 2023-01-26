@@ -1,6 +1,7 @@
 <h1 id="title" align="center">Bakker Bartel 🥯</h1>
+<img src="https://i.imgur.com/AVW8xl2.png">
 
-<p id="description">Website for Bakery Bartel in Purmerend. Made by a team of 5 students using Laravel MySQL HTML/CSS Tailwind</p>
+<h4 id="description">Website for Bakery Bartel in Purmerend. Made by a team of 5 students using Laravel MySQL HTML/CSS Tailwind</h4>
 
   
   
