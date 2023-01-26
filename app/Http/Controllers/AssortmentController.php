@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Assortment;
-use Illuminate\Http\Request;
 
 class AssortmentController extends Controller
 {
@@ -12,6 +11,7 @@ class AssortmentController extends Controller
         $data = [
             'assortment' => Assortment::paginate(5),
         ];
+
         return view('assortment', $data);
     }
 }
