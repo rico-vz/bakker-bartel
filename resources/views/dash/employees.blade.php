@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-8xl sm:px-7 lg:px-9">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <table class="overflow-hidden rounded-lg shadow-md">
@@ -27,7 +27,8 @@
                             @foreach ($employees as $employee)
                                 <tr class="text-gray-700">
                                     <td class="px-4 py-2 border-t">{{ $employee->function->name }}</td>
-                                    <td class="px-4 py-2 border-t">{{ $employee->first_name }} {{ $employee->last_name }}</td>
+                                    <td class="px-4 py-2 border-t">{{ $employee->first_name }}
+                                        {{ $employee->last_name }}</td>
                                     <td class="px-4 py-2 border-t">{{ $employee->date_of_birth }}</td>
                                     <td class="px-4 py-2 border-t">{{ $employee->email }}</td>
                                     <td class="px-4 py-2 border-t">{{ $employee->phone }}</td>
